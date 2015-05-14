@@ -11,8 +11,12 @@ end
 
 # creates connection and utilizes twilio api to send out text to helpers
 post '/connections' do
+  seeker = User.create(phone_number: params[:phone_number])
+  helper_phone_numbers = User.where.not(username:nil).pluck(:phone_number)
 
-  redirect '/connections/:id'
+  connection = seeker.build_seek_connection(context: params[:context])
+  connection.save
+  redirect "/connections/#{connection.id}"
 end
 
 get '/connections/:id' do
