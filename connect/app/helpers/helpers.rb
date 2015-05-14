@@ -1,5 +1,10 @@
 helpers do
 
+  def store_user_login(user)
+    session[:current_user] = user.id
+  end
+
+
   def current_user
     @current_user ||= User.find(session[:user_id])
   end
