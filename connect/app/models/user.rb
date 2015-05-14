@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def password
-    @password || = Password.new(hashed_password)
+    @password ||= Password.new(hashed_password)
   end
 
   def password=(new_password)
