@@ -4,10 +4,13 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  def self.authenticate(username, password)
-    user = User.find_by_username(username)
-    return user if user && (user.password == password)
-    nil
+  def self.authenticate(user_credentials)
+    current_user = User.find_by_username(user_credentials[:username])
+    if current_user && current_user.password == user_credentials[:password]
+      current_user
+    else
+      nil
+    end
   end
 
   def password
@@ -15,7 +18,8 @@ class User < ActiveRecord::Base
   end
 
   def password=(new_password)
-    self.hashed_password = Password.create(new_password)
+    @password = Password.create(new_password)
+    self.hashed_password = @password
   end
 
   def self.text_helpers(url, recipients)
