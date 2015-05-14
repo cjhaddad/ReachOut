@@ -18,4 +18,19 @@ class User < ActiveRecord::Base
     self.hashed_password = Password.create(new_password)
   end
 
+  def self.text_helpers(url, recipients)
+    @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
+
+    from = '+13176717463'
+
+    recipients.each do |number|
+      message = @client.account.messages.create(
+                                                from: from,
+                                                to: number,
+                                                body: "Someone would like to connect. Follow this link: #{url}"
+                                                )
+    puts "sent message to #{number}"
+    end
+  end
+
 end
