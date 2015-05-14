@@ -1,0 +1,10 @@
+<div class="signup_form">
+  <h3>Sign up a new account</h3>
+    <form action="/users" method="post">
+      <input type="text" name="user[username]" placeholder="username">
+      <input type="password" name="user[password]" placeholder="password">
+      <input type="tel" name="user[phone_number]" placeholder="555 555 5555">
+      <input type="submit" value="sign in">
+    </form>
+  <%= erb :"_errors" %>
+</div>

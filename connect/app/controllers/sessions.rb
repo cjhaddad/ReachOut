@@ -1,15 +1,19 @@
 get '/sessions/new' do
-
   erb :'_login'
 end
 
-post '/sessions' do
-
-  # redirect
+post "/sessions" do
+  user = User.authenticate(params[:user])
+  if user
+    store_user_login(user)
+    redirect to "/connections"
+  else
+    @errors = "Log in failed; Please try again"
+    erb :"_login"
+  end
 end
 
-delete 'sessions' do
+delete "/sessions/logout" do
   logout_user
-
-  # redirect
+  redirect to "/login"
 end
