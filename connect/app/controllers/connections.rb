@@ -26,3 +26,7 @@ put '/connections/:id' do
   redirect '/connections/:id'
 end
 
+# use if wanting to delete connection TBD
+# delete '/connections/:id' do
+
+# end
