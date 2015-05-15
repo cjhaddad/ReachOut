@@ -5,5 +5,8 @@ User.create(username: "logan", password: "password", phone_number: "+18473704680
 
 User.create(phone_number: "+11111111111")
 
-Connection.create(seeker_id: 5, context: "Hi I want to speak with a woman about my problems.")
+Connection.create(seeker_id: 4, context: "Context of connection 1")
+Connection.create(seeker_id: 4, context: "Context of connection 2")
+Connection.create(seeker_id: 4, context: "Context of connection 3")
+Connection.create(seeker_id: 4, helper_id: 1, context: "Context of connection 4")
 
