@@ -1,6 +1,10 @@
 get '/connections' do
-  @connections = Connection.where(helper: nil)
-  erb :'connections/index'
+  if logged_in?
+    @connections = Connection.where(helper: nil)
+    erb :'connections/index'
+  else
+    redirect "/"
+  end
 end
 
 get '/connections/new' do
@@ -17,7 +21,7 @@ post '/connections' do
   connection = seeker.build_seek_connection(context: params[:context])
   connection.save
 
-  User.text_helpers("THIS IS WHERE THE LINK GOES", helper_phone_numbers)
+  User.text_helpers("localhost:9393/connections/#{connection.id}", helper_phone_numbers)
 
   redirect "/connections/#{connection.id}"
 end

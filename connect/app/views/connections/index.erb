@@ -1,5 +1,9 @@
+
 <% @connections.each do |connection| %>
-  <div>
-    <a href="/connections/<%=connection.id%>"><%=connection.context%></a>
-  <div>
+  <div class="container">
+    <div class="jumbotron">
+      <a href="/connections/<%=connection.id%>">Connection ID: <%=connection.id%></a>
+      <p><%=connection.context%></p>
+    </div>
+  </div>
 <%end%>
