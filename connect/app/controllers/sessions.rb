@@ -5,7 +5,7 @@ end
 post "/sessions" do
   user = User.authenticate(params[:user])
   if user
-    store_user_login(user)
+    session[:user_id] = user.id
     redirect to "/connections"
   else
     @errors = "Log in failed; Please try again"
@@ -13,7 +13,7 @@ post "/sessions" do
   end
 end
 
-delete "/sessions/logout" do
+delete "/sessions" do
   logout_user
-  redirect to "/login"
+  redirect to "/"
 end
