@@ -1,5 +1,5 @@
 <!-- form for a new connection -->
-<div class="container">
+<div class="container" id="new-connection-form">
   <div class="jumbotron text-center">
     <h4>Please provide a phone number at which a volunteer can reach you</h4>
     <form class="form-horizontal" role="form" action="/connections" method="POST">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Reach Out</button>
+        <button type="submit" id="reach-out-button" class="btn btn-default">Reach Out</button>
       </div>
     </form>
     <%= erb :"partials/_errors" %>
