@@ -52,9 +52,9 @@ get '/connections/:id' do
 end
 
 put '/connections/:id' do
-
-# change :id below to interpolate specific connection id
-  redirect '/connections/:id'
+  connection = Connection.find_by(id: params[:id])
+  connection.update_attributes(helper_id: current_user_id)
+  redirect "/connections/#{params[:id]}"
 end
 
 # use if wanting to delete connection TBD

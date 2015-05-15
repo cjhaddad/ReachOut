@@ -6,6 +6,7 @@
     <div>
       <ul class="nav navbar-nav">
         <% if logged_in? %>
+          <li><a style="color: red" href="/connections">Provide Help</a></li>
           <li>
             <form action="/sessions" method="post">
               <input type="hidden" name="_method" value="delete">

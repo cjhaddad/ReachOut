@@ -1,0 +1,8 @@
+<div class="container">
+  <h4>This person is still looking for someone with whom to talk.</h4>
+  <p>They would like to say: <%= @connection.context %></p>
+  <form class="form-inline" role="form" action="/connections/<%= @connection.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <button type="submit" class="btn btn-default">Reach Out</button>
+  </form>
+</div>
