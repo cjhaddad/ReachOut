@@ -6,16 +6,16 @@
     <div>
       <ul class="nav navbar-nav">
         <% if logged_in? %>
-          <li><a style="color: red" href="/connections">Provide Help</a></li>
+          <li><a id="help" style="color: red" href="/connections">Provide Help</a></li>
           <li>
-            <form action="/sessions" method="post">
+            <form id="logout" action="/sessions" method="post">
               <input type="hidden" name="_method" value="delete">
               <input class="btn btn-danger" type="submit" value=" Log Out">
             </form>
           </li>
         <% else %>
-          <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+          <li id="sign-up"><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up to Volunteer</a></li>
+          <li><a id="login-button" href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Volunteer Log In</a></li>
         <% end %>
       </ul>
     </div>

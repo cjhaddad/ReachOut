@@ -7,7 +7,7 @@ post "/users" do
   if new_user.valid?
     new_user = User.authenticate(params[:user])
     if new_user
-      store_user_login(new_user)
+      session[:user_id] = new_user.id
       redirect to "/connections"
     else
       @errors = "Sign up successfull but authentication failed; Please try logging in your new account"

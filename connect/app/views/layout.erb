@@ -19,11 +19,14 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/login.js"></script>
   <!-- <link href="css/bootstrap-3.3.4/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <title></title>
 </head>
 <%= erb :'partials/_navbar' %>
 <body>
-  <%= yield %>
+  <div id="body-div">
+    <%= yield %>
+  </div>
 </body>
 </html>
