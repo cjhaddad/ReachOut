@@ -4,46 +4,25 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href="/css/bootstrap-3.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
    <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link href="/css/bootstrap-3.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--
     application.css is where you put your styles
   -->
-  <link rel="stylesheet" href="/css/application.css">
+  <!-- <link rel="stylesheet" href="/css/application.css"> -->
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-
+  <!-- <link href="css/bootstrap-3.3.4/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <title></title>
 </head>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">ReachOut</a>
-      </div>
-      <div>
-        <ul class="nav navbar-nav">
-          <% if logged_in? %>
-            <li>
-              <form action="/sessions" method="post">
-                <input type="hidden" name="_method" value="delete">
-                <input type="submit" value="Log Out">
-              </form>
-            </li>
-          <% else %>
-            <li><a href="/users/new">Sign Up</a></li>
-            <li><a href="/sessions/new">Log In</a></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<%= erb :'partials/_navbar' %>
 <body>
   <%= yield %>
 </body>

@@ -9,12 +9,12 @@
           <li>
             <form action="/sessions" method="post">
               <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="Log Out">
+              <span class="glyphicon glyphicon-log-out"></span><input type="submit" value=" Log Out">
             </form>
           </li>
         <% else %>
-          <li><a href="/users/new">Sign Up</a></li>
-          <li><a href="/sessions/new">Log In</a></li>
+          <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="/sessions/new"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
         <% end %>
       </ul>
     </div>
