@@ -1,3 +1,5 @@
 <% @connections.each do |connection| %>
-
+  <div>
+    <a href="/connections/<%=connection.id%>"><%=connection.context%></a>
+  <div>
 <%end%>
