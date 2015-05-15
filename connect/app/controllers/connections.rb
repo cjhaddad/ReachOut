@@ -1,5 +1,5 @@
 get '/connections' do
-
+  @connections = Connection.where.not(username: nil)
   erb :'connections/index'
 end
 
