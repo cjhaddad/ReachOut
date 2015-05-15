@@ -16,6 +16,9 @@ post '/connections' do
 
   connection = seeker.build_seek_connection(context: params[:context])
   connection.save
+
+  User.text_helpers("THIS IS WHERE THE LINK GOES", helper_phone_numbers)
+
   redirect "/connections/#{connection.id}"
 end
 
