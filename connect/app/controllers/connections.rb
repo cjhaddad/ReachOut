@@ -8,8 +8,11 @@ get '/connections' do
 end
 
 get '/connections/new' do
-
-  erb :'connections/new'
+  if request.xhr?
+    erb :'connections/new', layout:false
+  else
+    erb :'connections/new'
+  end
 end
 
 
