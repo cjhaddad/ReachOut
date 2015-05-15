@@ -1,9 +1,9 @@
-<div class="login_form">
+<!-- <div class="login_form"> -->
   <h3>Log in</h3>
   <form action="/sessions" method="post">
     <input type="text" name="user[username]" placeholder="username">
     <input type="password" name="user[password]" placeholder="password">
     <input type="submit" value="log in">
   </form>
-  <%= erb :"_errors" %>
-</div>
+  <%= erb :"partials/_errors" %>
+<!-- </div> -->

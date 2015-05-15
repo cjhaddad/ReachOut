@@ -11,7 +11,7 @@ post "/users" do
       redirect to "/connections"
     else
       @errors = "Sign up successfull but authentication failed; Please try logging in your new account"
-      erb :"_login"
+      erb :"partials/_login"
     end
   else
     @errors = "Sign up failed; Please try again"

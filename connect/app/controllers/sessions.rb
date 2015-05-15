@@ -1,5 +1,5 @@
 get '/sessions/new' do
-  erb :'_login'
+  erb :'partials/_login'
 end
 
 post "/sessions" do
@@ -9,7 +9,7 @@ post "/sessions" do
     redirect to "/connections"
   else
     @errors = "Log in failed; Please try again"
-    erb :"_login"
+    erb :"partials/_login"
   end
 end
 
